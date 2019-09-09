@@ -8,14 +8,29 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView{
+            List{
+                NavigationLink(destination: PlusASecond()){
+                    Text("Plus A Second")
+                }
+                
+                NavigationLink(destination: DarkModeTest()){
+                    Text("Dark Mode Test")
+                }
+                
+                NavigationLink(destination: ColorMixer()){
+                    Text("Color Mixer")
+                }
+                
+            }.navigationBarTitle(Text("30Days"))
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView().previewDevice("iPhone XR")
     }
 }
