@@ -16,6 +16,7 @@
 		C599FE45232651C400F83BCC /* PlusASecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE44232651C400F83BCC /* PlusASecond.swift */; };
 		C599FE4723266C9100F83BCC /* DarkModeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE4623266C9100F83BCC /* DarkModeTest.swift */; };
 		C599FE492326746200F83BCC /* ColorMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE482326746200F83BCC /* ColorMixer.swift */; };
+		C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE4A2326A64F00F83BCC /* TypefaceComparison.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C599FE44232651C400F83BCC /* PlusASecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusASecond.swift; sourceTree = "<group>"; };
 		C599FE4623266C9100F83BCC /* DarkModeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTest.swift; sourceTree = "<group>"; };
 		C599FE482326746200F83BCC /* ColorMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMixer.swift; sourceTree = "<group>"; };
+		C599FE4A2326A64F00F83BCC /* TypefaceComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypefaceComparison.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				C599FE44232651C400F83BCC /* PlusASecond.swift */,
 				C599FE4623266C9100F83BCC /* DarkModeTest.swift */,
 				C599FE482326746200F83BCC /* ColorMixer.swift */,
+				C599FE4A2326A64F00F83BCC /* TypefaceComparison.swift */,
 			);
 			path = SubPage;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				C599FE4723266C9100F83BCC /* DarkModeTest.swift in Sources */,
 				C599FE322326502300F83BCC /* SceneDelegate.swift in Sources */,
 				C599FE342326502300F83BCC /* ContentView.swift in Sources */,
+				C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */,
 				C599FE492326746200F83BCC /* ColorMixer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
