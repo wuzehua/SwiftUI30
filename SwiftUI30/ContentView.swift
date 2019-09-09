@@ -24,6 +24,10 @@ struct HomeView: View {
                     Text("Color Mixer")
                 }
                 
+                NavigationLink(destination: TypefaceComparison(rotationX: 0.0)){
+                    Text("Typeface Comparison")
+                }
+                
             }.navigationBarTitle(Text("30Days"))
         }
     }
