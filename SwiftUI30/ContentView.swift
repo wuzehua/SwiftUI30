@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         NavigationView{
             List{
@@ -26,6 +27,18 @@ struct HomeView: View {
                 
                 NavigationLink(destination: TypefaceComparison(rotationX: 0.0)){
                     Text("Typeface Comparison")
+                }
+                
+                NavigationLink(destination: CatScene()){
+                    Text("Cat Scene")
+                }
+                
+                NavigationLink(destination: AnimationTextField()){
+                    Text("Animation Text Field")
+                }
+                
+                NavigationLink(destination: ZStackCard()){
+                    Text("Z Stack Cards")
                 }
                 
             }.navigationBarTitle(Text("30Days"))
