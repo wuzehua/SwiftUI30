@@ -41,6 +41,10 @@ struct HomeView: View {
                     Text("Z Stack Cards")
                 }
                 
+                NavigationLink(destination: MetalTest()){
+                    Text("Metal Test")
+                }
+                
             }.navigationBarTitle(Text("30Days"))
         }
     }
