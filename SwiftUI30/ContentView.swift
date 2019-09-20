@@ -45,6 +45,10 @@ struct HomeView: View {
                     Text("Metal Test")
                 }
                 
+                NavigationLink(destination: Sun()){
+                    Text("Sun Canvas")
+                }
+                
             }.navigationBarTitle(Text("30Days"))
         }
     }

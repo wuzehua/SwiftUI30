@@ -8,6 +8,7 @@
 
 import MetalKit
 import simd
+import GLKit
 
 class MetalView: MTKView {
     private var commandQueue: MTLCommandQueue?
@@ -16,17 +17,17 @@ class MetalView: MTKView {
     private var uniformBuffer: MTLBuffer?
     private var indexBuffer: MTLBuffer?
     
-//    private var projectionMatrix: matrix_float4x4!
-//    private var viewMatrix: matrix_float4x4!
-//    private var modelMatrix: matrix_float4x4!
+    private var projectionMatrix: GLKMatrix4!
+    private var viewMatrix: GLKMatrix4!
+    private var modelMatrix: GLKMatrix4!
     
-    private var projectionMatrix: Matrix!
-    private var viewMatrix: Matrix!
-    private var modelMatrix: Matrix!
+//    private var projectionMatrix: Matrix!
+//    private var viewMatrix: Matrix!
+//    private var modelMatrix: Matrix!
     
     private var cameraPosition: vector_float3!
     
-    private var theta: Float = 0.0
+    private var theta: Float = Float.pi / 400
     
     
     
@@ -35,7 +36,8 @@ class MetalView: MTKView {
         device = MTLCreateSystemDefaultDevice()
         initProjection()
         initViewMatrix()
-        modelMatrix = Matrix.makeScaleMatrix(scale: vector3(0.5, 0.5, 0.5))
+        initModelMatrix()
+        modelMatrix = GLKMatrix4MakeScale(0.5, 0.5, 0.5)
         createBuffer()
         registerShader()
     }
@@ -44,25 +46,25 @@ class MetalView: MTKView {
         super.init(frame: frameRect, device: device)
         initProjection()
         initViewMatrix()
-        modelMatrix = Matrix.makeScaleMatrix(scale: vector3(0.5, 0.5, 0.5))
+        initModelMatrix()
         createBuffer()
         registerShader()
-//        print(projectionMatrix)
-//        print(viewMatrix)
-//        print(modelMatrix)
     }
     
     private func initProjection(){
         let aspect = Float(drawableSize.width / drawableSize.height)
         print("aspect = \(aspect)")
-        //projectionMatrix = makeProjectionMatrix(near: 1, far: 5, aspect: aspect, angleOfView: 1.1)
-        projectionMatrix = Matrix.makeProjectionMatrix(near: 0, far: 10, aspect: aspect, angleOfView: 1)
+        projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(90), aspect, 0.01, 100)
     }
     
     private func initViewMatrix(){
-        cameraPosition = vector_float3(0,0,-3.0)
-        //viewMatrix = makeTranslationMatrix(displacement: cameraPosition)
-        viewMatrix = Matrix.makeTranslationMatrix(displacement: -cameraPosition)
+        cameraPosition = vector3(0, 0, 2)
+        viewMatrix = GLKMatrix4MakeTranslation(-cameraPosition.x, -cameraPosition.y, -cameraPosition.z)
+    }
+    
+    private func initModelMatrix(){
+        modelMatrix = GLKMatrix4MakeScale(0.5, 0.5, 0.5)
+        modelMatrix = GLKMatrix4RotateX(modelMatrix, Float.pi / 4)
     }
     
     override func draw(_ rect: CGRect) {
@@ -78,7 +80,7 @@ class MetalView: MTKView {
             
             
             
-            let commandBuffer = device!.makeCommandQueue()?.makeCommandBuffer()
+            let commandBuffer = commandQueue?.makeCommandBuffer()
             let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd)
             
             commandEncoder?.setRenderPipelineState(rps!)
@@ -87,7 +89,6 @@ class MetalView: MTKView {
             
             commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
             commandEncoder?.setVertexBuffer(uniformBuffer, offset: 0, index: 1)
-            //commandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3, instanceCount: 1)
             commandEncoder?.drawIndexedPrimitives(type: .triangle, indexCount: indexBuffer!.length / MemoryLayout<UInt16>.size, indexType: MTLIndexType.uint16, indexBuffer: indexBuffer!, indexBufferOffset: 0)
             commandEncoder?.endEncoding()
             
@@ -126,10 +127,11 @@ class MetalView: MTKView {
         print("indexCount = \(indexBuffer!.length / MemoryLayout<UInt16>.size)")
         
         let bufferPointer = uniformBuffer?.contents()
-        let MVP = projectionMatrix * viewMatrix * modelMatrix
-//        var uniforms = Uniforms(MVP: modelMatrix)
-//        print("uniform size = \(MemoryLayout<Uniforms>.size) float size = \(16 * MemoryLayout<Float>.size)")
-        memcpy(bufferPointer, MVP.m, 16 * MemoryLayout<Float>.size)
+        let MVP = viewMatrix * modelMatrix
+        print(MVP)
+        var uniforms = Uniforms(MVP: MVP)
+        print("uniform size = \(MemoryLayout<Uniforms>.size) float size = \(16 * MemoryLayout<Float>.size)")
+        memcpy(bufferPointer, withUnsafePointer(to: &uniforms, {$0}), MemoryLayout<Uniforms>.size)
         
     }
     
@@ -153,21 +155,11 @@ class MetalView: MTKView {
     }
     
     func updateView(){
-        theta += Float.pi / 400
-        if theta >= 2 * Float.pi{
-            theta = 0
-        }
-//        let rotateX = makeRotationXMatrix(theta: Float.pi / 4)
-//        let rotateY = makeRotationYMatrix(theta: theta)
-//        modelMatrix = matrix_multiply(rotateX, rotateY)
-        let rotateX = Matrix.makeRotationXMatrix(theta: Float.pi / 4)
-        let rotateY = Matrix.makeRotationYMatrix(theta: theta)
-        modelMatrix = rotateX * rotateY
+        modelMatrix = GLKMatrix4RotateY(modelMatrix, theta)
         let bufferPointer = uniformBuffer?.contents()
-//        let MVP = matrix_multiply(projectionMatrix, matrix_multiply(viewMatrix, modelMatrix))
         let MVP = projectionMatrix * viewMatrix * modelMatrix
-        //var uniform = Uniforms(MVP: MVP)
-        memcpy(bufferPointer, MVP.m, 16 * MemoryLayout<Float>.size)
+        var uniform = Uniforms(MVP: MVP)
+        memcpy(bufferPointer, withUnsafePointer(to: &uniform, {$0}), MemoryLayout<Uniforms>.size)
     }
     
 }

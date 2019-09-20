@@ -23,6 +23,9 @@
 		C599FE4723266C9100F83BCC /* DarkModeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE4623266C9100F83BCC /* DarkModeTest.swift */; };
 		C599FE492326746200F83BCC /* ColorMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE482326746200F83BCC /* ColorMixer.swift */; };
 		C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599FE4A2326A64F00F83BCC /* TypefaceComparison.swift */; };
+		C5B1B01A2334EC9C007CE9D7 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1B0192334EC9C007CE9D7 /* Sun.swift */; };
+		C5B1B01C2334ECB9007CE9D7 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1B01B2334ECB9007CE9D7 /* MathView.swift */; };
+		C5B1B01E2334EDAB007CE9D7 /* Sun.metal in Sources */ = {isa = PBXBuildFile; fileRef = C5B1B01D2334EDAB007CE9D7 /* Sun.metal */; };
 		C5F83A49233288120002BEC8 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F83A48233288120002BEC8 /* MetalView.swift */; };
 		C5F83A4B23328B710002BEC8 /* MetalCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F83A4A23328B710002BEC8 /* MetalCanvas.swift */; };
 		C5F83A4D23328E860002BEC8 /* MetalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F83A4C23328E860002BEC8 /* MetalTest.swift */; };
@@ -48,6 +51,9 @@
 		C599FE4623266C9100F83BCC /* DarkModeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTest.swift; sourceTree = "<group>"; };
 		C599FE482326746200F83BCC /* ColorMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMixer.swift; sourceTree = "<group>"; };
 		C599FE4A2326A64F00F83BCC /* TypefaceComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypefaceComparison.swift; sourceTree = "<group>"; };
+		C5B1B0192334EC9C007CE9D7 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		C5B1B01B2334ECB9007CE9D7 /* MathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
+		C5B1B01D2334EDAB007CE9D7 /* Sun.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Sun.metal; sourceTree = "<group>"; };
 		C5F83A48233288120002BEC8 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		C5F83A4A23328B710002BEC8 /* MetalCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalCanvas.swift; sourceTree = "<group>"; };
 		C5F83A4C23328E860002BEC8 /* MetalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTest.swift; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C54B480623322A2400B97560 /* Shader.metal */,
+				C5B1B01D2334EDAB007CE9D7 /* Sun.metal */,
 			);
 			path = MetalFile;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 		C599FE432326518700F83BCC /* SubPage */ = {
 			isa = PBXGroup;
 			children = (
+				C5B1B0182334EC03007CE9D7 /* MetalView */,
 				C599FE44232651C400F83BCC /* PlusASecond.swift */,
 				C599FE4623266C9100F83BCC /* DarkModeTest.swift */,
 				C599FE482326746200F83BCC /* ColorMixer.swift */,
@@ -134,11 +142,20 @@
 				C58A45832327A4BC00F7462B /* CatScene.swift */,
 				C58A45852327A71B00F7462B /* AnimationTextField.swift */,
 				C58A45872327D36600F7462B /* ZStackCard.swift */,
+			);
+			path = SubPage;
+			sourceTree = "<group>";
+		};
+		C5B1B0182334EC03007CE9D7 /* MetalView */ = {
+			isa = PBXGroup;
+			children = (
 				C5F83A48233288120002BEC8 /* MetalView.swift */,
 				C5F83A4A23328B710002BEC8 /* MetalCanvas.swift */,
 				C5F83A4C23328E860002BEC8 /* MetalTest.swift */,
+				C5B1B0192334EC9C007CE9D7 /* Sun.swift */,
+				C5B1B01B2334ECB9007CE9D7 /* MathView.swift */,
 			);
-			path = SubPage;
+			path = MetalView;
 			sourceTree = "<group>";
 		};
 		C5FEC3EE2332467500AB7875 /* Utils */ = {
@@ -234,6 +251,9 @@
 				C5F83A4D23328E860002BEC8 /* MetalTest.swift in Sources */,
 				C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */,
 				C5FEC3F02332469700AB7875 /* MathUtils.swift in Sources */,
+				C5B1B01C2334ECB9007CE9D7 /* MathView.swift in Sources */,
+				C5B1B01E2334EDAB007CE9D7 /* Sun.metal in Sources */,
+				C5B1B01A2334EC9C007CE9D7 /* Sun.swift in Sources */,
 				C58A458223279F7E00F7462B /* SceneKitView.swift in Sources */,
 				C599FE492326746200F83BCC /* ColorMixer.swift in Sources */,
 				C5F83A4B23328B710002BEC8 /* MetalCanvas.swift in Sources */,

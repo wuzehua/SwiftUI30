@@ -8,6 +8,7 @@
 
 import Foundation
 import MetalKit
+import GLKit
 
 struct Vertex {
     var position: vector_float4
@@ -16,29 +17,27 @@ struct Vertex {
 
 
 struct Uniforms {
-    var MVP: matrix_float4x4
+    var MVP: GLKMatrix4
+}
+
+extension GLKMatrix4{
+    static func *(_ mata: GLKMatrix4, _ matb: GLKMatrix4) -> GLKMatrix4{
+        return GLKMatrix4Multiply(mata, matb)
+    }
 }
 
 func makeTranslationMatrix(displacement: vector_float3) -> matrix_float4x4 {
-    var result = matrix_float4x4()
-    for i in 0..<4{
-        result[i][i] = 1.0
-        if i != 3{
-            result[i][3] = displacement[i]
-        }
+    var result = matrix_float4x4(1)
+    for i in 0..<3{
+        result[3][i] = displacement[i]
     }
     return result
 }
 
 func makeScaleMatrix(scale: vector_float3) -> matrix_float4x4 {
-    var result = matrix_float4x4()
-    for i in 0..<4{
-        if i == 3{
-            result[i][i] = 1.0
-        }
-        else{
-            result[i][i] = scale[i]
-        }
+    var result = matrix_float4x4(1)
+    for i in 0..<3{
+        result[i][i] = scale[i]
     }
     return result
 }
@@ -71,15 +70,21 @@ func makeRotationZMatrix(theta: Float) -> matrix_float4x4{
 }
 
 func makeProjectionMatrix(near: Float, far: Float, aspect: Float, angleOfView: Float) -> matrix_float4x4{
+    var result = matrix_float4x4()
     let scaleY = 1 / tan(angleOfView / 2)
     let scaleX = scaleY / aspect
-    let scaleZ = -(far + near) / (far - near)
-    let scaleW = -2 * far * near / (far - near)
-    let X = vector_float4(scaleX,0,0,0)
-    let Y = vector_float4(0,scaleY,0,0)
-    let Z = vector_float4(0,0,scaleZ,-1)
-    let W = vector_float4(0,0,scaleW,0)
-    return matrix_float4x4(columns: (X,Y,Z,W))
+    let scaleZ = far / (far - near)
+    let scaleW = -far * near / (far - near)
+    
+    result.columns.0.x = scaleX
+    result.columns.1.y = scaleY
+    
+    result.columns.2.z = scaleZ
+    result.columns.2.w = 1
+    
+    result.columns.3.z = scaleW
+    
+    return result
 }
 
 
