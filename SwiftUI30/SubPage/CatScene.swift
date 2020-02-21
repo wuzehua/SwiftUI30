@@ -18,6 +18,5 @@ struct CatScene: View {
 struct CatScene_Previews: PreviewProvider {
     static var previews: some View {
         CatScene()
-        .previewDevice("iPhone XR")
     }
 }

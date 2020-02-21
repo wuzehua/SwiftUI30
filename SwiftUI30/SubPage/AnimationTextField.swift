@@ -38,6 +38,5 @@ struct AnimationTextField: View {
 struct AnimationTextField_Previews: PreviewProvider {
     static var previews: some View {
         AnimationTextField()
-            .previewDevice("iPhone XR")
     }
 }

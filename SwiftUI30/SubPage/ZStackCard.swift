@@ -76,6 +76,6 @@ struct ZStackCard: View {
 struct ZStackCard_Previews: PreviewProvider {
     static var previews: some View {
         ZStackCard()
-        .previewDevice("iPhone XR")
+        .previewDevice("iPhone 11")
     }
 }

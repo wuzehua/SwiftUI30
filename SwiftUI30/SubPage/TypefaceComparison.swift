@@ -97,6 +97,5 @@ struct TypefaceComparison: View {
 struct TypefaceComparison_Previews: PreviewProvider {
     static var previews: some View {
         TypefaceComparison(rotationX: 0.0)
-            .previewDevice("iPhone XR")
     }
 }

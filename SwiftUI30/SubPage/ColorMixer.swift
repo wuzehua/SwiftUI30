@@ -107,6 +107,5 @@ struct ColorMixer: View {
 struct ColorMixer_Previews: PreviewProvider {
     static var previews: some View {
         ColorMixer()
-            .previewDevice("iPhone XR")
     }
 }

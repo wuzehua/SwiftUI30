@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C515EBCA240005C8004200A7 /* MainListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515EBC9240005C8004200A7 /* MainListItem.swift */; };
 		C54B480723322A2400B97560 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = C54B480623322A2400B97560 /* Shader.metal */; };
 		C58A458023279F4900F7462B /* cat.scn in Resources */ = {isa = PBXBuildFile; fileRef = C58A457F23279F4900F7462B /* cat.scn */; };
 		C58A458223279F7E00F7462B /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A458123279F7E00F7462B /* SceneKitView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C515EBC9240005C8004200A7 /* MainListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItem.swift; sourceTree = "<group>"; };
 		C54B480623322A2400B97560 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 		C58A457F23279F4900F7462B /* cat.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = cat.scn; sourceTree = "<group>"; };
 		C58A458123279F7E00F7462B /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C515EBC82400043B004200A7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C515EBC9240005C8004200A7 /* MainListItem.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		C54B4805233229F000B97560 /* MetalFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		C599FE2E2326502300F83BCC /* SwiftUI30 */ = {
 			isa = PBXGroup;
 			children = (
+				C515EBC82400043B004200A7 /* CustomView */,
 				C5FEC3EE2332467500AB7875 /* Utils */,
 				C54B4805233229F000B97560 /* MetalFile */,
 				C58A457E23279F1500F7462B /* 3DModel */,
@@ -247,6 +258,7 @@
 				C58A45882327D36600F7462B /* ZStackCard.swift in Sources */,
 				C599FE322326502300F83BCC /* SceneDelegate.swift in Sources */,
 				C599FE342326502300F83BCC /* ContentView.swift in Sources */,
+				C515EBCA240005C8004200A7 /* MainListItem.swift in Sources */,
 				C58A45842327A4BC00F7462B /* CatScene.swift in Sources */,
 				C5F83A4D23328E860002BEC8 /* MetalTest.swift in Sources */,
 				C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */,

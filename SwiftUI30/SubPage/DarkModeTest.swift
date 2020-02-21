@@ -44,6 +44,5 @@ struct DarkModeTest_Previews: PreviewProvider {
     static var previews: some View {
         DarkModeTest()
             .environment(\.colorScheme, .light)
-            .previewDevice("iPhone XR")
     }
 }

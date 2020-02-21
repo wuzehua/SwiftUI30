@@ -87,6 +87,6 @@ struct PlusASecond: View {
 
 struct PlusASecond_Previews: PreviewProvider {
     static var previews: some View {
-        PlusASecond().previewDevice("iPhone XR")
+        PlusASecond().previewDevice("iPhone 11")
     }
 }
