@@ -48,5 +48,6 @@ struct BreathView: View {
 struct BreathView_Previews: PreviewProvider {
     static var previews: some View {
         BreathView(radius: 55)
+            .environment(\.colorScheme, .dark)
     }
 }
