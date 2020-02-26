@@ -54,6 +54,10 @@ struct HomeView: View {
                     NavigationLink(destination: Sun()){
                         MainListItem(title: "Sun Canvas", description: "Metal kernel function test")
                     }
+                    
+                    NavigationLink(destination: BreathView(radius: 55)){
+                        MainListItem(title: "Breath View", description: "Apple Watch breath")
+                    }
                 }
                 
             }.navigationBarTitle(Text("30Days"))

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C515EBCA240005C8004200A7 /* MainListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515EBC9240005C8004200A7 /* MainListItem.swift */; };
 		C54B480723322A2400B97560 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = C54B480623322A2400B97560 /* Shader.metal */; };
+		C572AF972406510C004EF939 /* BreathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572AF962406510C004EF939 /* BreathView.swift */; };
 		C58A458023279F4900F7462B /* cat.scn in Resources */ = {isa = PBXBuildFile; fileRef = C58A457F23279F4900F7462B /* cat.scn */; };
 		C58A458223279F7E00F7462B /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A458123279F7E00F7462B /* SceneKitView.swift */; };
 		C58A45842327A4BC00F7462B /* CatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A45832327A4BC00F7462B /* CatScene.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		C515EBC9240005C8004200A7 /* MainListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItem.swift; sourceTree = "<group>"; };
 		C54B480623322A2400B97560 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		C572AF962406510C004EF939 /* BreathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathView.swift; sourceTree = "<group>"; };
 		C58A457F23279F4900F7462B /* cat.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = cat.scn; sourceTree = "<group>"; };
 		C58A458123279F7E00F7462B /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
 		C58A45832327A4BC00F7462B /* CatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScene.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				C58A45832327A4BC00F7462B /* CatScene.swift */,
 				C58A45852327A71B00F7462B /* AnimationTextField.swift */,
 				C58A45872327D36600F7462B /* ZStackCard.swift */,
+				C572AF962406510C004EF939 /* BreathView.swift */,
 			);
 			path = SubPage;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				C58A45842327A4BC00F7462B /* CatScene.swift in Sources */,
 				C5F83A4D23328E860002BEC8 /* MetalTest.swift in Sources */,
 				C599FE4B2326A64F00F83BCC /* TypefaceComparison.swift in Sources */,
+				C572AF972406510C004EF939 /* BreathView.swift in Sources */,
 				C5FEC3F02332469700AB7875 /* MathUtils.swift in Sources */,
 				C5B1B01C2334ECB9007CE9D7 /* MathView.swift in Sources */,
 				C5B1B01E2334EDAB007CE9D7 /* Sun.metal in Sources */,

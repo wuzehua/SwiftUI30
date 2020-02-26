@@ -17,11 +17,12 @@ struct MainListItem: View {
         VStack(alignment: .leading){
             Text(title)
                 .bold()
-                .font(.system(size: 22))
+                .font(.system(size: 18))
+                .padding(.bottom, 2)
                 
             
             Text(description)
-                .font(.body)
+                .font(.system(size: 14))
             
         }.padding(.vertical, 3)
         
